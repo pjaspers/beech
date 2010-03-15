@@ -1,7 +1,3 @@
-# A quick way to tweet from the command line
-# As for the name: http://itunes.com/app/oak by @10to1
-# Added 'oak' as source.
- 
 function beech(){
     # Twitter != Rocket Science, so security is not that much of an issue
     TWITTER_BEECH_USER="username"
@@ -19,7 +15,6 @@ function beech(){
         fi
     else
         echo "beech ~ tweet from your homerow"
-        echo "usage : beech 'your message here'"
-        echo " "
+        echo "usage : beech 'your message here'\n"
     fi
 }
