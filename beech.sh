@@ -1,3 +1,5 @@
+#!/bin/sh
+
 TWITTER_BEECH_USER='username'
 TWITTER_BEECH_PASS='password'
 
@@ -7,7 +9,7 @@ function beech(){
         echo "usage : beech 'your message here'\n"
         return
     fi
-    len=`echo -n "$1" | wc -c`
+    len=$(echo -n "$1" | wc -c)
     if [ "$len" -gt "140" ]; then
         echo "Tweet length is $len, exceeds max. 140 characters"
         return $len
