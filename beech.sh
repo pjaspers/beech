@@ -13,6 +13,5 @@ function beech(){
         return $len
     fi
     ENCODED=$(echo -n "$1" |  perl -pe's/([^-_.~A-Za-z0-9])/sprintf("%%%02X", ord($1))/seg');
-    # TODO correct parameter for extended regexes => BSD: `sed -E`; GNU: `sed -r`
     /usr/bin/curl -Ss -u $TWITTER_BEECH_USER:$TWITTER_BEECH_PASS -d "source=oak&status=$ENCODED" http://twitter.com/statuses/update.xml | grep 'error' | sed 's/<[^>]+>//g'
 }
