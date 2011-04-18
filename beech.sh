@@ -15,7 +15,7 @@ function beech(){
     fi
     ENCODED=$(echo -n "$1" |  perl -pe's/([^-_.~A-Za-z0-9])/sprintf("%%%02X", ord($1))/seg');
     [ "$BEECH_VERBOSE" ] && echo -n "Sending tweet... "
-    /usr/bin/curl -Ss -u $BEECH_USER:$BEECH_PASS -d "source=oak&status=$ENCODED" http://twitter.com/statuses/update.xml | grep 'error' | sed 's/<[^>]+>//g'
+    /usr/bin/curl -Ss -u $BEECH_USER:$BEECH_PASS -d "source=beech&status=$ENCODED" http://simpleauthtwitter.heroku.com/api/statuses/update.xml | grep 'error' | sed 's/<[^>]+>//g'
     [ "$BEECH_VERBOSE" ] && echo "DONE!"
     unset ENCODED BEECH_VERBOSE BEECH_PASS BEECH_USER BEECH_CONF
 }
