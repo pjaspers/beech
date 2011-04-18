@@ -9,10 +9,11 @@ A quick way to post a tweet from the command line.
 1. Make sure the script is loaded when you open a shell, so add the following line to your shell configuration file (e.g. `~/.bashrc` or `~/.zshrc`)
 
         source /path/to/beech/beech.sh
+1. Acquire a secret key from [Simple Auth Twitter](http://simpleauthtwitter.heroku.com/)
 1. Store user configuration: Create a the file `~/.beech/default` and add the following lines:
 
         BEECH_USER='username'
-        BEECH_PASS='password'
+        BEECH_PASS='secret-key'
 1. Open a new shell and just post tweets with the command: `beech 'My first tweet using beech'`
 
 ### Options
